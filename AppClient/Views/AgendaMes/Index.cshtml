@@ -1,0 +1,77 @@
+﻿
+@{
+    ViewBag.Title = "Agenda Mês";
+}
+
+<header class="row m-0 fixed-header">
+    <div class="left">
+        <a href="@Url.Action("Index", "MenuAgenda")"><i class="material-icons">keyboard_backspace</i></a>
+    </div>
+    <div class="col center">
+        <div class="logo">
+            <figure><img src="~/img/logo.png" alt=""></figure>Agenda do Mês
+        </div>
+    </div>
+    <div class="right">
+        <a href="@Url.Action("Index", "MenuHome")"><i class="material-icons">home</i></a>
+    </div>
+</header>
+<div class="page-content h-100">
+    <div class="content-sticky-footer">
+        <br>
+        <div class="container">
+
+            <div class="row">
+
+                <div class="form-inline">
+                    <div class="form-group">
+                        <div class="col center">
+                            <h6 id="LabelAgendaMes" class="text-dark">
+                                Mês
+                            </h6>
+                        </div>
+                        <div class="col center">
+                            <select id="SelectMesAno" name="SelectMesAno" class="custom-select"></select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br />
+
+            <div class="row">
+
+                <div class="col-12">
+                    <table id="TableAgendaMes" class="table table-bordered table-striped text-dark">
+                        <thead>
+                            <tr class="Blue">
+                                <th>Evento</th>
+                                <th style="width: 110px">Data - Hora</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer-wrapper">
+        <div class="footer dark">
+            <div class="row mx-0">
+                <div class="col text-center">
+                    Copyright 2019 T&E Analítica
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+
+    <script type="text/javascript">
+        var dados = JSON.parse(@Html.Raw(ViewBag.jsonData));
+    </script>
+
+    <script src="~/js/agendames.js"></script>
+}
+

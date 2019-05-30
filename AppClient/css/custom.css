@@ -1,0 +1,64 @@
+
+.cor-verde-lavado {
+    color: #b2f8b9;
+    color: rgba(178, 248, 185, 1);
+}
+
+.cor-azul-lavado {
+    color: #70b1f7;
+    color: rgba(112, 177, 247, 1);
+}
+
+.cor-vermelho-lavado {
+    color: #e13838;
+    color: rgba(225, 56, 56, 1);
+}
+
+.cor-amarelo-lavado {
+    color: #f5d67a;
+    color: rgba(245, 214, 122, 1);
+}
+
+.bg-azul-claro{
+    background-color:#94c2f4!important;
+    background-color: rgba(148, 194, 244, 1);
+}
+
+.bg-azul-maisclaro{
+    background-color:#dcebfb!important;
+    background-color: rgba(220, 235, 251, 1);
+}
+
+.bg-branco-claro{
+    background-color:#ffffff!important; 
+    background-color: rgba(255, 255, 255, 1);            
+    border-radius: 0 0 9px 9px;      
+}
+
+.bg-palha{
+    background-color:#faebd7!important;
+    background-color: rgba(250, 235, 215, 1);
+}
+
+text-right {
+    text-align: right!important;
+}
+
+text-left {
+    text-align: left!important;
+}
+
+tr.Blue {
+    background-color: rgba(0, 126, 217, 0.50);
+    color: white;
+}
+
+.word-wrap {
+    word-break: break-all;    
+}
+.no-wrap {
+    white-space: nowrap;
+}
+.fixed {
+    table-layout: fixed;
+}

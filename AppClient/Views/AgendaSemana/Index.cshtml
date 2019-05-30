@@ -1,0 +1,57 @@
+﻿
+@{
+    ViewBag.Title = "Agenda Semana";
+}
+
+<header class="row m-0 fixed-header">
+    <div class="left">
+        <a href="@Url.Action("Index", "MenuAgenda")"><i class="material-icons">keyboard_backspace</i></a>
+    </div>
+    <div class="col center">
+        <div class="logo">
+            <figure><img src="~/img/logo.png" alt=""></figure>Agenda da Semana
+        </div>
+    </div>
+    <div class="right">
+        <a href="@Url.Action("Index", "MenuHome")"><i class="material-icons">home</i></a>
+    </div>
+</header>
+<div class="page-content h-100">
+    <div class="content-sticky-footer">
+        <br>
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-12">
+                    <div class="mb-3">
+                        <h6 id="LabelAgendaSemana" class="text-center text-dark"></h6>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <table id="TableAgendaSemana" class="table table-bordered table-striped text-dark">
+                        <thead>
+                            <tr class="Blue">
+                                <th>Evento</th>
+                                <th style="width: 110px">Data - Hora</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+
+    <script type="text/javascript">
+        var dados = JSON.parse(@Html.Raw(ViewBag.jsonData));         
+    </script>
+
+    <script src="~/js/agendasemana.js"></script>
+}
+

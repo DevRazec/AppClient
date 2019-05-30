@@ -1,0 +1,76 @@
+﻿
+@{
+    ViewBag.Title = "Menu Home";
+}
+
+<header class="row m-0 fixed-header">
+    <div class="left">
+        <a href="@Url.Action("Index", "Home")"><i class="material-icons">keyboard_backspace</i></a>
+    </div>
+    <div class="col center">
+        <div class="logo">
+            <figure><img src="~/img/logo.png" alt=""></figure>Home
+        </div>
+    </div>
+</header>
+<div class="page-content h-100">
+    <div class="content-sticky-footer">
+
+        <div class="w-100">
+
+            <br>
+
+            <div class="carosel">
+                <div class="swiper-container swiper-init swipermultiple">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="swiper-content-block">
+                                <a href="@Url.Action("Index", "MenuDashboard")" class="text-white">
+                                    <div class="text-center">
+                                        <i class="material-icons cor-verde-lavado icon-4x mb-3">bar_chart</i>
+                                        <h5 class="mb-0 text-white">Dashboard</h5>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="swiper-content-block ">
+                                <a href="#" class="text-white">
+                                    <div class="text-center">
+                                        <i class="material-icons cor-azul-lavado icon-4x mb-3">shopping_cart</i>
+                                        <h5 class="mb-0 text-white">Requisição</h5>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="swiper-content-block ">
+                                <a href="@Url.Action("Index", "MenuAgenda")" class="text-white">
+                                    <div class="text-center">
+                                        <i class="material-icons cor-amarelo-lavado icon-4x mb-3">event_note</i>
+                                        <h5 class="mb-0 text-white">Agenda</h5>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="swiper-content-block ">
+                                <a href="#" class="text-white">
+                                    <div class="text-center">
+                                        <i class="material-icons text-white icon-4x mb-3">grid_on</i>
+                                        <h5 class="mb-0 text-white">Outros</h5>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>    
+</div>
+

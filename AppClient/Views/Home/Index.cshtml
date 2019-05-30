@@ -1,0 +1,68 @@
+﻿@model AppClient.Models.LoginUsuario
+
+@{
+    ViewBag.Title = "Login";
+}
+
+@*@if (ViewData.ModelState.IsValid)
+    {
+        if (@ViewBag.Name != null)
+        {
+            <b>
+                Login : @ViewBag.Login<br />
+                Senha : @ViewBag.Senha
+            </b>
+        }
+    }*@
+
+<div class="background"><img src="~/img/background.jpg" alt=""></div>
+<div class="page-content h-100 text-center">
+    <div class="verification">
+        <div class="row mx-0">
+            <div class="col">
+                <img src="~/img/logo.png" alt="" class="login-logo">
+                <h5 class="item-title text-white">Analítica</h5>
+            </div>
+        </div>
+        <br>
+        <div class="row mx-0">
+            <div class="col">
+
+                @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="login-input-content">
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="material-icons">person</i></span>
+                            </div>
+                            @Html.EditorFor(model => model.Login, new { htmlAttributes = new { @class = "form-control", @placeholder = "Login" } })
+                        </div>
+
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="material-icons">lock</i></span>
+                            </div>
+                            @Html.EditorFor(model => model.Senha, new { htmlAttributes = new { @class = "form-control", @placeholder = "Senha", @autocomplete = "off" } })
+                        </div>
+                    </div>
+
+                    <br />
+
+                    <div class="input-group">
+                        <input type="submit" id="btnLogin" class="btn btn-block gradient border-0 z-3" value="Entrar">
+                    </div>
+
+                    <br />
+
+                    <div class="text-left">
+                        <p>@Html.ValidationSummary(false, "", new { @class = "text-white" })</p>                       
+                        <p class="text-white">@ViewBag.MessageHome</p>
+                    </div>
+                }
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,132 @@
+﻿
+@{
+    ViewBag.Title = "Gráfico Orçamento";
+}
+
+<header class="row m-0 fixed-header">
+    <div class="left">
+        <a href="@Url.Action("Index", "MenuOrcamento")"><i class="material-icons">keyboard_backspace</i></a>
+    </div>
+    <div class="col center">
+        <div class="logo">
+            <figure><img src="~/img/logo.png" alt=""></figure>Gráficos Orçamento
+        </div>
+    </div>
+    <div class="right">
+        <a href="@Url.Action("Index", "MenuHome")"><i class="material-icons">home</i></a>
+    </div>
+</header>
+<div class="page-content h-100">
+    <div class="content-sticky-footer">
+        <br>
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-12">
+                    <div class="row mb-3">
+                        <div class="col-6">
+                            <select id="SelectMes" name="SelectMes" class="custom-select">
+                                <option value="1">Janeiro</option>
+                                <option value="2">Fevereiro</option>
+                                <option value="3">Março</option>
+                                <option value="4">Abril</option>
+                                <option value="5">Maio</option>
+                                <option value="6">Junho</option>
+                                <option value="7">Julho</option>
+                                <option value="8">Agosto</option>
+                                <option value="9">Setembro</option>
+                                <option value="10">Outubro</option>
+                                <option value="11">Novembro</option>
+                                <option value="12">Dezembro</option>
+                            </select>
+                        </div>
+                        <div class="col-6">
+                            <select id="SelectAno" name="SelectAno" class="custom-select"></select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="card bg-azul-maisclaro">
+                        <div class="card-body">
+                            <canvas id="TempoOrc" width="150" height="150"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="card mb-3 bg-azul-maisclaro">
+                        <div class="card-body">
+                            <canvas id="SituacaoOrc" width="150" height="200"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="card bg-azul-maisclaro">
+                        <div class="card-body">
+                            <canvas id="AnaliseCritica" width="150" height="200"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="card bg-azul-maisclaro">
+                        <div class="card-body">
+                            <canvas id="QtdOrcAvulsoAno" width="150" height="200"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="card bg-azul-maisclaro">
+                        <div class="card-body">
+                            <canvas id="QtdOrcContratoAno" width="150" height="200"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="card bg-azul-maisclaro">
+                        <div class="card-body">
+                            <canvas id="QtdOrcApAno" width="150" height="200"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="card bg-azul-maisclaro">
+                        <div class="card-body">
+                            <canvas id="QtdOrcDec" width="150" height="200"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="card bg-azul-maisclaro">
+                        <div class="card-body">
+                            <canvas id="QtdOrcCan" width="150" height="200"></canvas>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+@section scripts {
+
+    <script type="text/javascript">
+        var dados = JSON.parse(@Html.Raw(ViewBag.jsonData));
+    </script>
+
+    <script src="~/js/mesatualanos.js"></script>
+
+    <script src="~/js/graficoorcamento.js"></script>
+}
+

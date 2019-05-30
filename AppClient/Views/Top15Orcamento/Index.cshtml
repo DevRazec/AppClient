@@ -1,0 +1,95 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<header class="row m-0 fixed-header">
+    <div class="left">
+        <a href="@Url.Action("Index", "MenuOrcamento")"><i class="material-icons">keyboard_backspace</i></a>
+    </div>
+    <div class="col center">
+        <div class="logo">
+            <figure><img src="~/img/logo.png" alt=""></figure>Top 15 Orçamentos
+        </div>
+    </div>
+    <div class="right">
+        <a href="@Url.Action("Index", "MenuHome")"><i class="material-icons">home</i></a>
+    </div>
+</header>
+<div class="page-content h-100">
+    <div class="content-sticky-footer">
+        <br>
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-12">
+                    <div class="row mb-3">
+                        <div class="col-6">
+                            <select id="SelectMes" name="SelectMes" class="custom-select">
+                                <option value="1">Janeiro</option>
+                                <option value="2">Fevereiro</option>
+                                <option value="3">Março</option>
+                                <option value="4">Abril</option>
+                                <option value="5">Maio</option>
+                                <option value="6">Junho</option>
+                                <option value="7">Julho</option>
+                                <option value="8">Agosto</option>
+                                <option value="9">Setembro</option>
+                                <option value="10">Outubro</option>
+                                <option value="11">Novembro</option>
+                                <option value="12">Dezembro</option>
+                            </select>
+                        </div>
+                        <div class="col-6">
+                            <select id="SelectAno" name="SelectAno" class="custom-select"></select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div id="LabelTopOrcApMes" class="text-center text-dark">
+                    </div>
+                    <table id="TableTop15OrcMes" class="table table-bordered table-striped text-dark">
+                        <thead>
+                            <tr class="Blue">
+                                <th>Top</th>
+                                <th>Empresa</th>
+                                <th>Valor</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+
+                <div class="col-12">
+                    <div id="LabelTopOrcApAno" class="text-center text-dark">
+                    </div>
+                    <table id="TableTop15OrcAno" class="table table-bordered table-striped text-dark">
+                        <thead>
+                            <tr class="Blue">
+                                <th>Top</th>
+                                <th>Empresa</th>
+                                <th>Valor</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+@section scripts {
+
+    <script type="text/javascript">
+        var dados = JSON.parse(@Html.Raw(ViewBag.jsonData));
+    </script>
+
+    <script src="~/js/mesatualanos.js"></script>
+
+    <script src="~/js/top15orcamento.js"></script>
+}
+

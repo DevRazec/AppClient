@@ -1,0 +1,249 @@
+﻿
+@{
+    ViewBag.Title = "Indicador Orçamento";
+}
+
+<header class="row m-0 fixed-header">
+    <div class="left">
+        <a href="@Url.Action("Index", "MenuOrcamento")"><i class="material-icons">keyboard_backspace</i></a>
+    </div>
+    <div class="col center">
+        <div class="logo">
+            <figure><img src="~/img/logo.png" alt=""></figure>Indicadores Orçamento
+        </div>
+    </div>
+    <div class="right">
+        <a href="@Url.Action("Index", "MenuHome")"><i class="material-icons">home</i></a>
+    </div>
+</header>
+<div class="page-content h-100">
+    <div class="content-sticky-footer">
+        <br>
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-12">
+                    <div class="row mb-3">
+                        <div class="col-6">
+                            <select id="SelectMes" name="SelectMes" class="custom-select">
+                                <option value="1">Janeiro</option>
+                                <option value="2">Fevereiro</option>
+                                <option value="3">Março</option>
+                                <option value="4">Abril</option>
+                                <option value="5">Maio</option>
+                                <option value="6">Junho</option>
+                                <option value="7">Julho</option>
+                                <option value="8">Agosto</option>
+                                <option value="9">Setembro</option>
+                                <option value="10">Outubro</option>
+                                <option value="11">Novembro</option>
+                                <option value="12">Dezembro</option>
+                            </select>
+                        </div>
+                        <div class="col-6">
+                            <select id="SelectAno" name="SelectAno" class="custom-select"></select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="card mb-3">
+                        <div class="card-header bg-azul-claro">
+                            <div class="media">
+                                <div class="icon">
+                                    <i class="material-icons text-white icon-2x mr-2">monetization_on</i>
+                                </div>
+                                <div class="media-body">
+                                    <h4 id="DivTotalAvulso" class="text-right f-light text-white my-1"></h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body text-left text-dark bg-branco-claro">
+                            <div class="mt-1 ld">Total Avulso</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="card mb-3">
+                        <div class="card-header bg-azul-claro">
+                            <div class="media">
+                                <div class="icon">
+                                    <i class="material-icons text-white icon-2x mr-2">monetization_on</i>
+                                </div>
+                                <div class="media-body">
+                                    <h4 id="DivTotalContrato" class="text-right f-light text-white my-1"></h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body text-left text-dark bg-branco-claro">
+                            <div class="mt-1 ld">Total Contrato</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="card mb-3">
+                        <div class="card-header bg-azul-claro">
+                            <div class="media">
+                                <div class="icon">
+                                    <i class="material-icons text-white icon-2x mr-2">monetization_on</i>
+                                </div>
+                                <div class="media-body">
+                                    <h4 id="DivPendenteCliente" class="text-right f-light text-white my-1"></h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body text-left text-dark bg-branco-claro">
+                            <div class="mt-1 ld">Pendente Cliente</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="card mb-3">
+                        <div class="card-header bg-azul-claro">
+                            <div class="media">
+                                <div class="icon">
+                                    <i class="material-icons text-white icon-2x mr-2">assignment</i>
+                                </div>
+                                <div class="media-body">
+                                    <h4 id="DivAvulso" class="text-right f-light text-white my-1"></h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body text-left text-dark bg-branco-claro">
+                            <div class="mt-1 ld">Avulso</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="card mb-3">
+                        <div class="card-header bg-azul-claro">
+                            <div class="media">
+                                <div class="icon">
+                                    <i class="material-icons text-white icon-2x mr-2">import_contacts</i>
+                                </div>
+                                <div class="media-body">
+                                    <h4 id="DivContrato" class="text-right f-light text-white my-1"></h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body text-left text-dark bg-branco-claro">
+                            <div class="mt-1 ld">Contrato</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="card mb-3">
+                        <div class="card-header bg-azul-claro">
+                            <div class="media">
+                                <div class="icon">
+                                    <i class="material-icons text-white icon-2x mr-2">thumb_up_alt</i>
+                                </div>
+                                <div class="media-body">
+                                    <h4 id="DivAprovado" class="text-right f-light text-white my-1"></h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body text-left text-dark bg-branco-claro">
+                            <div class="mt-1 ld">Aprovado</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="card mb-3">
+                        <div class="card-header bg-azul-claro">
+                            <div class="media">
+                                <div class="icon">
+                                    <i class="material-icons text-white icon-2x mr-2">thumb_down_alt</i>
+                                </div>
+                                <div class="media-body">
+                                    <h4 id="DivDeclinado" class="text-right f-light text-white my-1"></h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body text-left text-dark bg-branco-claro">
+                            <div class="mt-1 ld">Declinado</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="card mb-3">
+                        <div class="card-header bg-azul-claro">
+                            <div class="media">
+                                <div class="icon">
+                                    <i class="material-icons text-white icon-2x mr-2">clear</i>
+                                </div>
+                                <div class="media-body">
+                                    <h4 id="DivCancelado" class="text-right f-light text-white my-1"></h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body text-left text-dark bg-branco-claro">
+                            <div class="mt-1 ld">Cancelado</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="card mb-3">
+                        <div class="card-header bg-azul-claro">
+                            <div class="media">
+                                <div class="icon">
+                                    <i class="material-icons text-white icon-2x mr-2">alarm_on</i>
+                                </div>
+                                <div class="media-body">
+                                    <h4 id="Medio" class="text-right f-light text-white my-1"></h4>
+                                    <div id="MinMax" class="text-right text-white"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body text-left text-dark bg-branco-claro">
+                            <div class="mt-1 ld">Tempo envio(dias)</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <div class="card mb-3">
+                        <div class="card-header bg-azul-claro">
+                            <div class="media">
+                                <div class="icon">
+                                    <i class="material-icons text-white icon-2x mr-2">insert_chart_outlined</i>
+                                </div>
+                                <div class="media-body">
+                                    <h4 id="DivAnaliseCritica" class="text-right f-light text-white my-1"></h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body text-left text-dark bg-branco-claro">
+                            <div class="mt-1 ld">AC Pendente</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+@section scripts {
+
+    <script type="text/javascript">
+        var dados = JSON.parse(@Html.Raw(ViewBag.jsonData));
+    </script>
+
+    <script src="~/js/mesatualanos.js"></script>
+
+    <script src="~/js/indicadororcamento.js"></script>
+}
+
